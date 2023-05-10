@@ -1,6 +1,9 @@
+import Header from "../Header";
 function Contact() {
     return (
-        // <!-- Main Content-->
+    <>
+        <Header type="contact" />
+         {/* <!-- Main Content--> */}
         <main class="mb-4">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
@@ -62,6 +65,7 @@ function Contact() {
                 </div>
             </div>
         </main>
+    </>
     )
 }
 export default Contact;

@@ -14,10 +14,15 @@ function Header(props){
         title: 'Verba Volant',
         subtitle: 'Perchè?',
         }, {
-        type: 'about',
+        type: 'contact',
         background: backgroundcontact,
         title: 'Have questions?',
         subtitle: 'Contact me!',
+      }, {
+        type: 'admin',
+        background: backgroundhome,
+        title: 'Admin section',
+        subtitle: '',
       }];
     let masthead;
     switch(props.type){
@@ -29,6 +34,9 @@ function Header(props){
             break;          
         case 'contact':
             masthead = mastheadcontent[2];
+            break;
+        case 'admin':
+            masthead = mastheadcontent[3];
             break;
         default:
             masthead = mastheadcontent[0];}

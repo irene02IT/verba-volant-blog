@@ -1,16 +1,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+
 function Nav(){
-    const linkStyle = {
-        color: "white"
-    };
     const [isNavExpanded, setIsNavExpanded] = useState(false);
+    //const [isLinkActive, setIsLinkActive] = useState(false);
     return(
         // <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand"> <img src="assets/logo192.png" alt=""/> <Link style={linkStyle} to="/" >Verba Volant</Link></a>
+                <Link to="/" ><a class="navbar-brand"> <img src="assets/logo192.png" alt=""/> Verba Volant</a></Link>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" onClick={() => {
                 setIsNavExpanded(!isNavExpanded);
                 }}>
@@ -19,10 +18,11 @@ function Nav(){
                 </button>
                 <div className={isNavExpanded ? "collapse navbar-collapse show": "collapse navbar-collapse" } id="navbarResponsive">
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" ><Link style={linkStyle} to="/" >Home</Link></a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" ><Link style={linkStyle} to="/about" >About</Link></a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" ><Link style={linkStyle} to="/contact" >Contact</Link></a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" >ITA</a></li>
+                        <li class="nav-item"><NavLink className="nav-link px-lg-3 py-3 py-lg-4" activeClassName="nav-link-active" to="/" >Home</NavLink></li>
+                        <li class="nav-item"><NavLink className="nav-link px-lg-3 py-3 py-lg-4" activeClassName="nav-link-active" to="/about" >About</NavLink></li>
+                        <li class="nav-item"><NavLink className="nav-link px-lg-3 py-3 py-lg-4" activeClassName="nav-link-active" to="/contact" >Contact</NavLink></li>
+                        <li class="nav-item"><NavLink className="nav-link px-lg-3 py-3 py-lg-4">ITA</NavLink></li>
+                        <li class="nav-item"><NavLink className="nav-link px-lg-3 py-3 py-lg-4" activeClassName="nav-link-active" to="/admin" >Admin</NavLink></li>
                     </ul>
                 </div>
             </div>

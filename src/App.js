@@ -4,6 +4,8 @@ import PageLayout from './components/PageLayout';
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Contact from "./components/pages/Contact";
+import Post from "./components/pages/Post";
+import Admin from "./components/pages/Admin";
 //import NoPage from "./components/pages/NoPage";
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
                 <Route index element={<Home />} />
                 <Route path="about" element={<About />} />
                 <Route path="contact" element={<Contact />} />
+                <Route path="post" element={<Post />} />
+                <Route path="admin" element={<Admin />} />
                 {/* <Route path="*" element={<NoPage />} /> */}
               </Route>
             </Routes>

@@ -1,7 +1,11 @@
 import HomepagePreview from './HomepagePreview';
+import Header from '../Header';
 function Home() {
   return (
-    <HomepagePreview />
+    <>
+      <Header type="home"/>
+      <HomepagePreview /> 
+    </>
   )
 }
 export default Home;

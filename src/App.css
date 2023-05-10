@@ -3888,11 +3888,13 @@ textarea.form-control-lg {
   color: #212529;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
+
 @media (prefers-reduced-motion: reduce) {
   .nav-link {
     transition: none;
   }
 }
+
 .nav-link:hover, .nav-link:focus {
   color: #0085A1;
 }

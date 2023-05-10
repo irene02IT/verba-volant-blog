@@ -1,29 +1,29 @@
 import PostPreview from './PostPreview';
 const posts = [{
   id: 0,
-  title: 'How running saved my life',
-  subtitle: 'My experience running a marathon',
-  date: '20/03/2023'
+  title: 'Title 1',
+  subtitle: 'Subtitle 1',
+  date: 'March 20, 2023'
 }, {
   id: 1,
-  title: 'We have a problem with love',
-  subtitle: 'And our culture has a lot of responsibility about it',
-  date: '20/03/2023'
+  title: 'Title 2',
+  subtitle: 'Subtitle 2',
+  date: 'March 20, 2023'
 }, {
   id: 2,
-  title: 'The relationship between me and my body',
-  subtitle: 'Subtitle 2',
-  date: '20/03/2023'
+  title: 'Title 3',
+  subtitle: 'Subtitle 3',
+  date: 'March 20, 2023'
 }, {
   id: 3,
   title: 'Title 4',
   subtitle: 'Subtitle 4',
-  date: '20/03/2023'
+  date: 'March 20, 2023'
 }, {
   id: 4,
-  title: 'How difficult is to start',
+  title: 'Title 5',
   subtitle: 'Subtitle 5',
-  date: '20/03/2023'
+  date: 'March 20, 2023'
 }];
 function PageContent() {
   const listItems = posts.map(post =>
