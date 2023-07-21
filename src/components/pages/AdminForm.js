@@ -6,23 +6,35 @@ function AdminForm() {
   const [article, setArticle] = useState({
     title: '',
     subtitle: '',
-    text: ''
+    path: ''
   });
 
   const dataHandler = async (event) => {
     event.preventDefault();
     try {
         const docRef = await addDoc(collection(db, "posts"), {
-          date: new Date().getDay() + "/" + new Date().getMonth() + "/" + new Date().getFullYear(),
+          date: article.date,
             title: article.title,
             subtitle: article.subtitle,
-            text: article.text
+            path: article.title.toLowerCase().replace(/ /g, '-')+".txt",
         });
         console.log("Document written with ID: ", docRef.id);
       } catch (e) {
         console.error("Error adding document: ", e);
       }
+      setArticle({
+        title: '',
+        subtitle: '',
+        path: ''
+      });
+      resetValidation();
   };
+  const resetValidation = () => {
+    const form = document.getElementById('adminForm');
+    form.classList.remove('was-validated');
+    form.reset();
+  };
+
 
   const handleInputChange = (event) => {
     const { id, value } = event.target;
@@ -57,9 +69,13 @@ function AdminForm() {
                                     <div className="invalid-feedback" data-sb-feedback="subtitle:required">A subtitle is required.</div>
                                 </div>
                                 <div className="form-floating">
-                                    <textarea className="form-control" id="text" placeholder="Enter your text here..." style={{innerHeight: '200rem'}} data-sb-validations="required" onChange={handleInputChange}></textarea>
-                                    <label for="article-text">Text</label>
-                                    <div className="invalid-feedback" data-sb-feedback="article-text:required">Text Required</div>
+                                    <label for="article-path">Path</label>
+                                    <div className="invalid-feedback" data-sb-feedback="article-path:required">Path Required</div>
+                                </div>
+                                <div className="form-floating">
+                                    <input type='date' className="form-control" id="date" placeholder="Enter your text here..." style={{innerHeight: '200rem'}} data-sb-validations="required" onChange={handleInputChange}></input>
+                                    <label for="date">Date</label>
+                                    <div className="invalid-feedback" data-sb-feedback="date:required">Date Required</div>
                                 </div>
                                 <br />
                                 {/* <!-- Submit Button--> */}

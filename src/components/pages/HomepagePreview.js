@@ -5,7 +5,7 @@ import { db } from './firebase'; // Importa l'istanza di Firestore dal file fire
 
 function PageContent() {
   const [posts, setPosts] = useState([]);
-  const [visiblePosts, setVisiblePosts] = useState(2); // Numero iniziale di post visibili
+  const [visiblePosts, setVisiblePosts] = useState(4); // Numero iniziale di post visibili
   const postsPerPage = 1; // Numero di post da visualizzare ogni volta che viene premuto il pulsante "Older Posts"
 
   useEffect(() => {
@@ -32,9 +32,9 @@ function PageContent() {
   };
 
   const listItems = posts.map(post =>
-    <PostPreview key={post.id} title={post.title} subtitle={post.subtitle} date={post.date} />
+    <PostPreview title={post.title} subtitle={post.subtitle} date={post.date} path={post.path}/>
   );
-  const hasMorePosts = visiblePosts < posts.length;
+  const hasMorePosts = visiblePosts <= posts.length;
 
   return (
     <div className="page-content">
@@ -45,11 +45,9 @@ function PageContent() {
             <div>{listItems}</div>
             {/* //<!-- Pager--> */}
             <div className="d-flex justify-content-end mb-4">
-              {hasMorePosts && (
-                <button className="btn btn-primary text-uppercase" onClick={handleOlderPostsClick}>
+                <button className={"btn btn-primary text-uppercase " + (hasMorePosts ? '' : 'disabled')} onClick={handleOlderPostsClick} disabled={!hasMorePosts}>
                   Older Posts →
                 </button>
-              )}
             </div>
           </div>
         </div>
