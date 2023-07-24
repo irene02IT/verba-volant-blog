@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/verba-volant-blog/static/css/main.093cd7f4.css",
+    "main.js": "/verba-volant-blog/static/js/main.f3fbe9df.js",
+    "static/js/787.2ccc2021.chunk.js": "/verba-volant-blog/static/js/787.2ccc2021.chunk.js",
+    "static/media/home-bg.jpg": "/verba-volant-blog/static/media/home-bg.d7fc1e246f39ce3c0d57.jpg",
+    "static/media/post-bg.jpg": "/verba-volant-blog/static/media/post-bg.9cfa68ef7373c6c402ac.jpg",
+    "static/media/about-bg.jpg": "/verba-volant-blog/static/media/about-bg.27e81808a2025c7e6caf.jpg",
+    "static/media/contact-bg.jpg": "/verba-volant-blog/static/media/contact-bg.beb44d287dc8c714dcbc.jpg",
+    "index.html": "/verba-volant-blog/index.html",
+    "main.093cd7f4.css.map": "/verba-volant-blog/static/css/main.093cd7f4.css.map",
+    "main.f3fbe9df.js.map": "/verba-volant-blog/static/js/main.f3fbe9df.js.map",
+    "787.2ccc2021.chunk.js.map": "/verba-volant-blog/static/js/787.2ccc2021.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.093cd7f4.css",
+    "static/js/main.f3fbe9df.js"
+  ]
+}
